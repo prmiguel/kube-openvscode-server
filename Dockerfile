@@ -9,3 +9,6 @@ RUN /app/openvscode-server/bin/openvscode-server --install-extension dag-anderse
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension redhat.vscode-knative 
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension Bridgecrew.checkov 
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension okteto.kubernetes-context
+
+WORKDIR /code
+RUN chmod -R 777 /code
