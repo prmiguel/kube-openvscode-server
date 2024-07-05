@@ -6,6 +6,10 @@ RUN /app/openvscode-server/bin/openvscode-server --install-extension redhat.vsco
     /app/openvscode-server/bin/openvscode-server --install-extension ms-kubernetes-tools.vscode-kubernetes-tools && \
     /app/openvscode-server/bin/openvscode-server --install-extension ipedrazas.kubernetes-snippets && \
     /app/openvscode-server/bin/openvscode-server --install-extension dag-andersen.kubernetes-reference-highlighter && \
+    apt update && \
+    apt install -y curl && \
+    curl -LO https://dl.k8s.io/release/v1.29.2/bin/linux/amd64/kubectl && \
+    install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
     mkdir /code && chmod -R 777 /code
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension tumido.crd-snippets
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension lunuan.kubernetes-templates 
