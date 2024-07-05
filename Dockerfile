@@ -1,5 +1,7 @@
 FROM lscr.io/linuxserver/openvscode-server:latest
 
+LABEL maintainer="prmiguel <miangel-pr@outlook.com>"
+
 RUN /app/openvscode-server/bin/openvscode-server --install-extension redhat.vscode-yaml && \
     /app/openvscode-server/bin/openvscode-server --install-extension ms-kubernetes-tools.vscode-kubernetes-tools && \
     /app/openvscode-server/bin/openvscode-server --install-extension ipedrazas.kubernetes-snippets && \
