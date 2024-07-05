@@ -3,17 +3,17 @@ services:
   kube-openvscode:
     image: ghcr.io/prmiguel/kube-openvscode-server:main
     container_name: kube-openvscode
+   # network_mode: bridge
+    network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      # - CONNECTION_TOKEN= #optional
-      # - CONNECTION_SECRET= #optional
       - SUDO_PASSWORD=Password!
-      # - SUDO_PASSWORD_HASH= #optional
     # volumes:
-      # - code:/code:rw
-      # - /path/to/appdata/config:/config
+      # - <your_kube_config>:/config/.kube/config
+      # - <your_kube_code>:/code:rw
     ports:
       - 3000:3000
+      # - 9080-9090:9080-9090
     restart: unless-stopped
