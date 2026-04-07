@@ -20,4 +20,5 @@ RUN /app/openvscode-server/bin/openvscode-server --install-extension redhat.vsco
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension Bridgecrew.checkov 
 # RUN /app/openvscode-server/bin/openvscode-server --install-extension okteto.kubernetes-context
 
+
 WORKDIR /code
